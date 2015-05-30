@@ -41,9 +41,11 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile  # Read Mac .profile, if present.
 fi
 
+
+
 # Shell Aliases
 ## Git Aliases
-alias gs='git status '
+alias gs='git status | fpp '
 alias ga='git add '
 alias gb='git branch '
 alias gc='git commit'
@@ -63,7 +65,8 @@ alias vaghalt='vagrant halt'
 
 ## Miscellaneous Aliases
 alias htop='sudo htop'
-
+#tmux in 256 color
+alias tmux='tmux -2'
 # Shell Functions
 # qfind - used to quickly find files that contain a string in a directory
 qfind () {
