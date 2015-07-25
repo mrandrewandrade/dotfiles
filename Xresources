@@ -12,7 +12,7 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! 01. General                                                                !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-XTerm*background: black
+XTerm*background: white 
 XTerm*foreground: white
 XTerm*pointerColor: red
 XTerm*pointerColorBackground: black

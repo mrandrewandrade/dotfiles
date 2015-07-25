@@ -41,6 +41,7 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile  # Read Mac .profile, if present.
 fi
 
+alias csclub='ssh a2andrad@csclub.uwaterloo.ca '
 
 
 # Shell Aliases
@@ -56,6 +57,9 @@ alias gx='gitx --all'
 alias got='git '
 alias get='git '
 
+## Tmux Aliases
+#tmux in 256 color
+alias tmux='tmux -2'
 ## Vagrant Aliases
 alias vag='vagrant'
 alias vagup='vagrant up'
@@ -63,10 +67,9 @@ alias vagdestroy='vagrant destroy'
 alias vagssh='vagrant ssh'
 alias vaghalt='vagrant halt'
 
+
 ## Miscellaneous Aliases
 alias htop='sudo htop'
-#tmux in 256 color
-alias tmux='tmux -2'
 # Shell Functions
 # qfind - used to quickly find files that contain a string in a directory
 qfind () {

@@ -36,3 +36,14 @@ alias tmux="tmux -2"
 export CLICOLOR=1
 # Set "ls" colors
 export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+export PYTHONPATH=/home/anon/Downloads/opencv-3.0.0/build/lib/$PYTHONPATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+#End of file
