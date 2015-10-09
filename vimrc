@@ -83,7 +83,7 @@ set relativenumber        " set relative line numbers
 set autoindent            " auto-indent
 set tabstop=4             " tab spacing
 set softtabstop=4         " unify
-set shiftwidth=4          " indent/outdent by 2 columns
+set shiftwidth=4          " indent/outdent by 4 columns
 set shiftround            " always indent/outdent to the nearest tabstop
 set expandtab             " use spaces instead of tabs
 set smartindent           " automatically insert one extra level of indentation
