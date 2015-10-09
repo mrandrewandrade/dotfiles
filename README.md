@@ -1,6 +1,7 @@
 Dotfiles
 ========
-This repository includes all of my custom dotfiles.  They should be cloned to
+This repository includes all of my custom dotfiles, orignally take from
+[here](github.com/michaeljsmalley/dotfiles).  They should be cloned to
 your home directory so that the path is `~/dotfiles/`.  The included setup
 script creates symlinks from your home directory to the files which are located
 in `~/dotfiles/`.
@@ -28,11 +29,10 @@ Installation
 ------------
 
 ``` bash
-<<<<<<< HEAD
-git clone git://github.com/michaeljsmalley/dotfiles ~/dotfiles
-=======
 git clone https://github.com/mrandrewandrade/dotfiles.git ~/dotfiles
->>>>>>> bb181c3a1ecc4c1e3d6f4783398cc97229e47751
 cd ~/dotfiles
 ./makesymlinks.sh
 ```
+
+Current todo list:
+Add install tmux + other of my favourite tools to [makesymlinks.sh](makesymlinks.sh)
