@@ -41,8 +41,6 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile  # Read Mac .profile, if present.
 fi
 
-alias csclub='ssh a2andrad@csclub.uwaterloo.ca '
-
 
 # Shell Aliases
 ## Git Aliases
@@ -70,6 +68,7 @@ alias vaghalt='vagrant halt'
 
 ## Miscellaneous Aliases
 alias htop='sudo htop'
+alias csclub='ssh a2andrad@csclub.uwaterloo.ca'
 # Shell Functions
 # qfind - used to quickly find files that contain a string in a directory
 qfind () {
@@ -82,3 +81,4 @@ qfind () {
 if [ -f /usr/bin/vim ]; then
   export EDITOR=/usr/bin/vim
 fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
