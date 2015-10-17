@@ -1,14 +1,30 @@
-Dotfiles
-========
-This repository includes all of my custom dotfiles, orignally take from
-[here](github.com/michaeljsmalley/dotfiles).  They should be cloned to
-your home directory so that the path is `~/dotfiles/`.  The included setup
-script creates symlinks from your home directory to the files which are located
-in `~/dotfiles/`.
+# Dotfiles
 
-The setup script is smart enough to back up your existing dotfiles into a
-`~/dotfiles_old/` directory if you already have any dotfiles of the same name as
-the dotfile symlinks being created in your home directory.
+This project is my gnarly system manager and dotfile auto-configuration tool since
+[dotfiles are meant to be forked!](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/)
+
+[Dotfiles](https://dotfiles.github.io/) are funky hidden configuration files which
+people use to customize their nerdery (and productivity): change how their prompt looks,
+set up their $PATH, completely change everything about Vim,  adjust settings their settings
+and about a billion and a half other things. They're tons of fun, and use them to get things
+done [at the speed of thought](http://mrandrewandrade.com/speed-of-thought/).
+
+This repo contains the files to get you started.  **Note**: This setup was orignally take from
+[here](github.com/michaeljsmalley/dotfiles) and built on Linux Mint but should work for most
+*nix-based (Unix-like) systems (such at Mac and Ubuntu).  If you are
+using Mac, I highly suggest upgrading your terminal and using [iTerm2](https://www.iterm2.com/).    
+
+To get started you either follow the command line installation instructions below
+(open terminal and type the commands) or can
+[download the files](https://github.com/mrandrewandrade/dotfiles/zipball/master)
+and unzip them in your home directory so that the path is `~/dotfiles/`.
+
+You can then run makesymlinks.sh (by running `sudo bash makesymlinks.sh`) to install
+everything.  Note, if you read the script, it creates
+[symlinks](https://en.wikipedia.org/wiki/Symbolic_link) from your home directory
+to the files which are located in `~/dotfiles/`.  The setup script is smart enough to
+back up your existing dotfiles into a `~/dotfiles_old/` directory if you already have
+any dotfiles of the same name as the dotfile symlinks being created in your home directory.     
 
 I also prefer `zsh` as my shell of choice.  As such, the setup script will also
 clone the `oh-my-zsh` repository from my GitHub. It then checks to see if `zsh`
@@ -25,8 +41,11 @@ So, to recap, the install script will:
 4. Check to see if `zsh` is installed, if it isn't, try to install it.
 5. If zsh is installed, run a `chsh -s` to set it as the default shell.
 
-Installation
-------------
+You can then configure any of your dotfiles by editing the files in 
+`~/dotfiles`.
+
+## Installation
+
 
 ``` bash
 git clone https://github.com/mrandrewandrade/dotfiles.git ~/dotfiles
