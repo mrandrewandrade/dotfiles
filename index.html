@@ -16,7 +16,7 @@
     <header>
       <div class="container">
         <h1>Dotfiles</h1>
-        <h2>A gnarly system manager and portable dotfiles generator! Automatically install zsh and set dotfiles on different machines!</h2>
+        <h2>A gnarly system manager and portable dotfiles generator!</h2>
 
         <section id="downloads">
           <a href="https://github.com/mrandrewandrade/dotfiles/zipball/master" class="btn">Download as .zip</a>
@@ -28,7 +28,73 @@
 
     <div class="container">
       <section id="main_content">
-        <p>My dotfiles!</p>
+        <h1>
+<a id="dotfiles" class="anchor" href="#dotfiles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dotfiles</h1>
+
+<p>This project is my gnarly system manager and dotfile auto-configuration tool since
+<a href="http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/">dotfiles are meant to be forked!</a></p>
+
+<p><a href="https://dotfiles.github.io/">Dotfiles</a> are funky hidden configuration files which
+people use to customize their nerdery (and greatly enhance productivity): change how their prompt looks,
+set up their $PATH, completely change everything about Vim,  adjust settings their settings
+and do about a billion and a half other things. They're tons of fun, and I use them to get things
+done <a href="http://mrandrewandrade.com/speed-of-thought/">at the speed of thought</a>.</p>
+
+<p>This repo contains the files to get you started!   </p>
+
+<p><strong>Note</strong>: This setup was orignally taken from <a href="github.com/michaeljsmalley/dotfiles">here</a>
+and built on Linux Mint based on my own preferences.  The system should work for most
+*nix-based (Unix-like) systems (such at Mac and Ubuntu).  If you are
+using Mac, I highly suggest upgrading your terminal and using <a href="https://www.iterm2.com/">iTerm2</a>.    </p>
+
+<p>To get started you either follow the command line installation instructions below
+(by opening terminal and typing the commands) or you can
+<a href="https://github.com/mrandrewandrade/dotfiles/zipball/master">download the files</a>
+and unzip them in your home directory so that the path is <code>~/dotfiles/</code>.</p>
+
+<p>You can then run makesymlinks.sh (by running <code>sudo bash makesymlinks.sh</code>) to install
+everything.  Note, if you read the script, it creates
+<a href="https://en.wikipedia.org/wiki/Symbolic_link">symlinks</a> from your home directory
+to the files which are located in <code>~/dotfiles/</code>.  The setup script is smart enough to
+back up your existing dotfiles into a <code>~/dotfiles_old/</code> directory if you already have
+any dotfiles of the same name as the dotfile symlinks being created in your home directory.     </p>
+
+<p>I also prefer <code>zsh</code> as my shell of choice.  As such, the setup script will also
+clone the <code>oh-my-zsh</code> repository from my GitHub. It then checks to see if <code>zsh</code>
+is installed.  If <code>zsh</code> is installed, and it is not already configured as the
+default shell, the setup script will execute a <code>chsh -s $(which zsh)</code>.  This
+changes the default shell to zsh, and takes effect as soon as a new zsh is
+spawned or on next login.</p>
+
+<p>So, to recap, the install script will:</p>
+
+<ol>
+<li>Back up any existing dotfiles in your home directory to <code>~/dotfiles_old/</code>
+</li>
+<li>Create symlinks to the dotfiles in <code>~/dotfiles/</code> in your home directory</li>
+<li>Clone the <code>oh-my-zsh</code> repository from my GitHub (for use with <code>zsh</code>)</li>
+<li>Check to see if <code>zsh</code> is installed, if it isn't, try to install it.</li>
+<li>If zsh is installed, run a <code>chsh -s</code> to set it as the default shell.</li>
+</ol>
+
+<p>You can then configure any of your dotfiles by editing the files in 
+<code>~/dotfiles</code>.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> <span class="pl-k">~</span>/
+<span class="pl-c"># Note: if you fork the repo, change mrandrewandrade to your github username</span>
+git clone https://github.com/mrandrewandrade/dotfiles.git <span class="pl-k">~</span>/dotfiles
+<span class="pl-c1">cd</span> <span class="pl-k">~</span>/dotfiles
+./makesymlinks.sh</pre></div>
+
+<p>Current todo list:</p>
+
+<ul>
+<li>Add install tmux + other of my favourite tools to <a href="makesymlinks.sh">makesymlinks.sh</a>
+</li>
+</ul>
       </section>
     </div>
 
