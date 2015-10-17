@@ -4,18 +4,20 @@ This project is my gnarly system manager and dotfile auto-configuration tool sin
 [dotfiles are meant to be forked!](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/)
 
 [Dotfiles](https://dotfiles.github.io/) are funky hidden configuration files which
-people use to customize their nerdery (and productivity): change how their prompt looks,
+people use to customize their nerdery (and greatly enhance productivity): change how their prompt looks,
 set up their $PATH, completely change everything about Vim,  adjust settings their settings
-and about a billion and a half other things. They're tons of fun, and use them to get things
+and do about a billion and a half other things. They're tons of fun, and I use them to get things
 done [at the speed of thought](http://mrandrewandrade.com/speed-of-thought/).
 
-This repo contains the files to get you started.  **Note**: This setup was orignally take from
-[here](github.com/michaeljsmalley/dotfiles) and built on Linux Mint but should work for most
+This repo contains the files to get you started!   
+
+**Note**: This setup was orignally taken from [here](github.com/michaeljsmalley/dotfiles)
+and built on Linux Mint based on my own preferences.  The system should work for most
 *nix-based (Unix-like) systems (such at Mac and Ubuntu).  If you are
 using Mac, I highly suggest upgrading your terminal and using [iTerm2](https://www.iterm2.com/).    
 
 To get started you either follow the command line installation instructions below
-(open terminal and type the commands) or can
+(by opening terminal and typing the commands) or you can
 [download the files](https://github.com/mrandrewandrade/dotfiles/zipball/master)
 and unzip them in your home directory so that the path is `~/dotfiles/`.
 
@@ -48,10 +50,12 @@ You can then configure any of your dotfiles by editing the files in
 
 
 ``` bash
+cd ~/
+# Note: if you fork the repo, change mrandrewandrade to your github username
 git clone https://github.com/mrandrewandrade/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./makesymlinks.sh
 ```
 
 Current todo list:
-Add install tmux + other of my favourite tools to [makesymlinks.sh](makesymlinks.sh)
+- Add install tmux + other of my favourite tools to [makesymlinks.sh](makesymlinks.sh)
