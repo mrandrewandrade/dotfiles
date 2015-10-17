@@ -50,12 +50,11 @@ You can then configure any of your dotfiles by editing the files in
 
 
 ``` bash
-cd ~/
 # Note: if you fork the repo, change mrandrewandrade
 # to your github username
 git clone https://github.com/mrandrewandrade/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-./makesymlinks.sh
+sudo bash makesymlinks.sh
 ```
 
 Current todo list:
