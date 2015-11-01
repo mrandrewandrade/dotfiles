@@ -56,3 +56,8 @@ fi
 }
 
 install_zsh
+sudo apt-get -y install git curl vim tmux htop 
+
+
+
+

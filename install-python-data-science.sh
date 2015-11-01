@@ -16,29 +16,29 @@
 # when you want to reconnect type `screen -r` at the command line
 
 # Create a certificate for later use in ipython notebook
-mkdir certs
-pushd certs
-openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout data-science-server.pem -out data-science-server.pem
-popd
+#mkdir certs
+#pushd certs
+#openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout data-science-server.pem -out data-science-server.pem
+#popd
 
 # TODO: add SHA1 hashing of user supplied password for ipython notebook
 
 # set memory limits. based on: http://wiki.vpslink.com/Compile_ANY_program
-export CFLAGS='--param ggc-min-expand=0 --param ggc-min-heapsize=500000'
+#export CFLAGS='--param ggc-min-expand=0 --param ggc-min-heapsize=500000'
 
 # make sure the apt repository index is up to date
 sudo apt-get -y update
 
 # OS
 sudo apt-get -y install build-essential gfortran
-sudo apt-get -y install git curl vim
+sudo apt-get -y install git curl vim tmux htop 
 
 # Python
-sudo apt-get -y install python3-dev python3-pip
+#sudo apt-get -y install python3-dev python3-pip
 sudo apt-get -y install python-dev
 
 # Set up virtual env
-sudo pip3 install virtualenv
+sudo pip install virtualenv
 mkdir venv
 pushd venv
 virtualenv data-science
