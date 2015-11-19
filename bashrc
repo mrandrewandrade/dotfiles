@@ -45,5 +45,6 @@ export PYTHONPATH=/home/anon/Downloads/opencv-3.0.0/build/lib/$PYTHONPATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-
+export M4PATH='/home//texmf/tex/latex/circuit_macros/'
+export TEXMFHOME=$HOME/texmf
 #End of file
