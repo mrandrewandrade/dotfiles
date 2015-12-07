@@ -58,6 +58,6 @@ fi
 install_zsh
 sudo apt-get -y install git curl vim tmux htop 
 
-
+sudo apt-get -y install python-serial python-setuptools python-dev python-smbus python-pip
 
 

@@ -37,5 +37,3 @@ export CLICOLOR=1
 # Set "ls" colors
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
-export PATH="/usr/local/bin/pip:$PATH"
-#End of file
