@@ -1,5 +1,5 @@
 # Explicitly configured $PATH variable
-PATH=/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/local/bin:/opt/local/sbin:/usr/X11/bin
+#PATH=/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/local/bin:/opt/local/sbin:/usr/X11/bin:/usr/local/bin
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -67,7 +67,9 @@ alias vagssh='vagrant ssh'
 alias vaghalt='vagrant halt'
 
 ## Miscellaneous Aliases
-alias htop='sudo htop'
+alias htop='htop'
+alias music='ncmpcpp'
+
 
 # Shell Functions
 # qfind - used to quickly find files that contain a string in a directory
@@ -82,3 +84,6 @@ if [ -f /usr/bin/vim ]; then
   export EDITOR=/usr/bin/vim
 fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+
+path=("$HOME/.local/bin" "$HOME/R/bin" $path)
