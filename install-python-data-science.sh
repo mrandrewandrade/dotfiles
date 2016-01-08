@@ -3,7 +3,7 @@
 ## create an ubuntu 14.04 hvm instance, then from your home directory:
 
 # 1. download this script
-# wget https://gist.githubusercontent.com/waylonflinn/506f563573600d944923/raw/install-python-data-science.sh
+# wget https://raw.githubusercontent.com/mrandrewandrade/dotfiles/master/install-python-data-science.sh
 
 # 2. make it executable
 # chmod a+x install-python-data-science.sh
@@ -14,17 +14,6 @@
 # 4. respond to the first couple of prompts, then come back in about an hour
 # if you get bored, hit `CTRL+A, D` to detach from the screen process
 # when you want to reconnect type `screen -r` at the command line
-
-# Create a certificate for later use in ipython notebook
-#mkdir certs
-#pushd certs
-#openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout data-science-server.pem -out data-science-server.pem
-#popd
-
-# TODO: add SHA1 hashing of user supplied password for ipython notebook
-
-# set memory limits. based on: http://wiki.vpslink.com/Compile_ANY_program
-#export CFLAGS='--param ggc-min-expand=0 --param ggc-min-heapsize=500000'
 
 # make sure the apt repository index is up to date
 sudo apt-get -y update

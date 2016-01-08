@@ -1,97 +1,162 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   Filename: .vimrc                                                         "
-" Maintainer: Andrew Andrade <andrew@andrewandrade.ca>                       "
-"        URL: http://github.com/mrandrewandrade/dotfiles                     "
-"                                                                            "
-"                                                                            "
-" Sections:                                                                  "
-"   01. General ................. General Vim behavior                       "
-"   02. Events .................. General autocmd events                     "
-"   03. Theme/Colors ............ Colors, fonts, etc.                        "
-"   04. Vim UI .................. User interface behavior                    "
-"   05. Text Formatting/Layout .. Text, tab, indentation related             "
-"   06. Custom Commands ......... Any custom command aliases                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-sublime - A minimal Sublime Text -like vim experience bundle
+"               http://github.com/grigio/vim-sublime
+" Best view with a 256 color terminal and Powerline fonts
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 01. General                                                                "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 02. Events                                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
+Bundle 'tpope/vim-surround'
+Bundle 'gcmt/breeze.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'bling/vim-airline'
+Bundle 'airblade/vim-gitgutter'
 
-" In Makefiles DO NOT use spaces instead of tabs
-autocmd FileType make setlocal noexpandtab
-" In Ruby files, use 2 spaces instead of 4 for tabs
-autocmd FileType ruby setlocal sw=2 ts=2 sts=2
+" Color Themes
+Bundle 'flazz/vim-colorschemes'
+colorscheme Monokai
 
-" Enable omnicompletion (to use, hold Ctrl+X then Ctrl+O while in Insert mode.
-set ofu=syntaxcomplete#Complete
+""""""""
+if has('autocmd')
+  filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 03. Theme/Colors                                                           "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256              " enable 256-color mode.
-syntax enable             " enable syntax highlighting (previously syntax on).
-colorscheme molokai       " set colorscheme
-
-" Prettify JSON files
-" autocmd BufRead,BufNewFile *.json set filetype=json
-" autocmd Syntax json sou ~/.vim/syntax/json.vim
-
-" Prettify Vagrantfile
-autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
-
-" Prettify Markdown files
-augroup markdown
-  au!
-  au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-augroup END
-
-" Highlight characters that go over 80 columns (by drawing a border on the 81st)
-" if exists('+colorcolumn')
-"   set colorcolumn=81
-"   highlight ColorColumn ctermbg=red
-" else
-"   highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"   match OverLength /\%81v.\+/
-" endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 04. Vim UI                                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set number                " show line numbers
-set numberwidth=6         " make the number gutter 6 characters wide
-set cul                   " highlight current line
-set laststatus=2          " last window always has a statusline
-set hlsearch              " continue to highlight searched phrases.
-set incsearch             " highlight as you type your search.
-set ignorecase            " Make searches case-insensitive.
-set smartcase             " Make searches smart case.
-set ruler                 " Always show info along bottom.
+" Use :help 'option' to see the documentation for the given option.
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
 set showmatch
-set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
-set visualbell
-set relativenumber        " set relative line numbers
+set showmode
+set smarttab
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 05. Text Formatting/Layout                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set autoindent            " auto-indent
-set tabstop=4             " tab spacing
-set softtabstop=4         " unify
-set shiftwidth=4          " indent/outdent by 4 columns
-set shiftround            " always indent/outdent to the nearest tabstop
-set expandtab             " use spaces instead of tabs
-set smartindent           " automatically insert one extra level of indentation
-set smarttab              " use tabs at the start of a line, spaces elsewhere
-set wrap                  " wrap text
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 06. Custom Commands                                                        "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nrformats-=octal
+set shiftround
 
-" Prettify JSON files making them easier to read
-command PrettyJSON %!python -m json.tool
+set ttimeout
+set ttimeoutlen=50
+
+set incsearch
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+
+set laststatus=2
+set ruler
+set showcmd
+set wildmenu
+
+set autoread
+
+set encoding=utf-8
+set tabstop=2 shiftwidth=2 expandtab
+set listchars=tab:▒░,trail:▓
+set list
+
+inoremap <C-U> <C-G>u<C-U>
+
+set number
+set hlsearch
+set ignorecase
+set smartcase
+set relativenumber
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
+
+" do not history when leavy buffer
+set hidden
+
+" FIXME: (broken) ctrl s to save
+noremap  <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <Esc>:update<CR>
+
+set nobackup
+set nowritebackup
+set noswapfile
+set fileformats=unix,dos,mac
+
+" exit insert mode 
+inoremap <C-c> <Esc>
+
+set completeopt=menuone,longest,preview
+
+"
+" Plugins config
+"
+
+" CtrlP
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/* 
+
+" Ultisnip
+" NOTE: <f1> otherwise it overrides <tab> forever
+let g:UltiSnipsExpandTrigger="<f1>"
+let g:UltiSnipsJumpForwardTrigger="<f1>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:did_UltiSnips_vim_after = 1
+
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+"
+" Basic shortcuts definitions
+"  most in visual mode / selection (v or ⇧ v)
+"
+
+" Find
+map <C-f> /
+" indend / deindent after selecting the text with (⇧ v), (.) to repeat.
+vnoremap <Tab> >
+vnoremap <S-Tab> <
+" comment / decomment & normal comment behavior
+vmap <C-m> gc
+" Disable tComment to escape some entities
+let g:tcomment#replacements_xml={}
+" Text wrap simpler, then type the open tag or ',"
+vmap <C-w> S
+" Cut, Paste, Copy
+vmap <C-x> d
+vmap <C-v> p
+vmap <C-c> y
+" Undo, Redo (broken)
+nnoremap <C-z>  :undo<CR>
+inoremap <C-z>  <Esc>:undo<CR>
+nnoremap <C-y>  :redo<CR>
+inoremap <C-y>  <Esc>:redo<CR>
+" Tabs
+let g:airline_theme='badwolf'
+let g:airline#extensions#tabline#enabled = 1
+nnoremap <C-b>  :tabprevious<CR>
+inoremap <C-b>  <Esc>:tabprevious<CR>i
+nnoremap <C-n>  :tabnext<CR>
+inoremap <C-n>  <Esc>:tabnext<CR>i
+nnoremap <C-t>  :tabnew<CR>
+inoremap <C-t>  <Esc>:tabnew<CR>i
+nnoremap <C-k>  :tabclose<CR>
+inoremap <C-k>  <Esc>:tabclose<CR>i
+
+" lazy ':'
+map \ :
+
+let mapleader = ','
+nnoremap <Leader>p :set paste<CR>
+nnoremap <Leader>o :set nopaste<CR>
+noremap  <Leader>g :GitGutterToggle<CR>
+
+" this machine config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
