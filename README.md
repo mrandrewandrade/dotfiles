@@ -27,7 +27,7 @@ using Mac, I highly suggest upgrading your terminal and using [iTerm2](https://w
 people use to customize their nerdery (and greatly enhance productivity): change how their prompt looks,
 set up their $PATH, completely change everything about Vim,  adjust settings their settings
 and do about a billion and a half other things. They're tons of fun, and I use them to get things
-done [at the speed of thought](http://mrandrewandrade.com/speed-of-thought/).
+done [at the speed of thought](https://andrewandrade.ca/speed-of-thought/).
 
 This repo contains the files to get you started!   
 
